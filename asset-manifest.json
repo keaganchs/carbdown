@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/carbdown.github.io/static/css/main.e6c13ad2.css",
+    "main.js": "/carbdown.github.io/static/js/main.4d2d125a.js",
+    "static/js/787.d2ed8eae.chunk.js": "/carbdown.github.io/static/js/787.d2ed8eae.chunk.js",
+    "index.html": "/carbdown.github.io/index.html",
+    "main.e6c13ad2.css.map": "/carbdown.github.io/static/css/main.e6c13ad2.css.map",
+    "main.4d2d125a.js.map": "/carbdown.github.io/static/js/main.4d2d125a.js.map",
+    "787.d2ed8eae.chunk.js.map": "/carbdown.github.io/static/js/787.d2ed8eae.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.4d2d125a.js"
+  ]
+}
