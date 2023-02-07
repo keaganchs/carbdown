@@ -1,38 +1,205 @@
-.App {
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --main-color: black;
+  --highlight-color: gray;
+  --background-color: white;
+  --header-background: var(--background-color);
+  --header-highlight: var(--highlight-color);
+  --main-text-color: black;
+  --link-text-color: darkblue;
+  --background-image: "";
+
+  --background-gradient-dark: rgb(219, 221, 222);
+  --background-gradient-light: rgb(253, 253, 253);
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background-color);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin: 0;
+  justify-content: center;
+}
+
+.Content {
+  justify-content: center;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.CenterText {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Content h1, h2, h3, h4 {
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a {
+  text-decoration: none;
+  color: var(--link-text-color);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+a:hover {
+  text-decoration-line: underline;
+}
+
+p {
+  color: var(--main-text-color);
+}
+
+h1, h2, h3, h4 {
+  color: var(--main-text-color);
+}
+
+.App {
+  height: 250vh;
+}
+
+.BackgroundGradient {
+  top: 0;
+  left: 50%;
+
+  width: 60%;
+  min-height: 250vh;
+  height: 100%;
+
+  transform: translateX(-50%);
+  position: absolute;
+  background-image: linear-gradient(0, var(--background-gradient-light), var(--background-gradient-dark)); 
+  z-index: -2;
+}
+
+.header nav {
+  position: relative;
+  border: 1px solid #f1f1f1;
+  min-height: 50px;
+  max-height: fit-content;
+  width: 100%;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  overflow-x: auto;
+  font-weight: bold;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 4px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: var(--header-background);
 }
 
-.App-link {
-  color: #61dafb;
+.header a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 4px;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.header a:hover {
+  text-decoration-line: underline;
+}
+
+* {
+  box-sizing: border-box;
+  transition: all 0.5s ease-out;
+}
+
+.FooterContainer {
+  top: 200vh;
+  position: relative;
+  width: 80%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bg-image {
+  position: absolute;
+
+  max-width: 50%;
+  max-height: auto;
+
+  background-color: var(--background-color);
+
+  z-index: -1;
+
+  animation-name: unBlurImage;
+  animation-duration: 2s;
+}
+
+@keyframes unBlurImage {
+  from {background-image: var(--background-image);
+      filter: blur(8px);}
+  to {background-image: var(--background-image);
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+.left {
+  float: left;
+  margin-left: 5%;
+}
+
+.right {
+  float: right;
+  margin-right: 5%;
+}
+
+.btn {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  color: none;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: lightblue;
+}
+
+#ToggleThemeButton {
+  background-color: var(--highlight-color);
+  color: var(--background-color);
+  padding: 6px;
+  text-decoration: none;
+  font-size: 12px;
+  gap: 4px;
+  cursor: pointer;
+  border: none;
+
+  /* transition: all 0.1s ease-out; */
+}
+
+.header, .BlogPost {
+  /* background: var(--highlight-color); */
+  box-shadow: 1px 1px 5px 5px rgba(177, 174, 174, 0.118);
+}
+
+.header:hover, .BlogPost:hover {
+  /* background-color: var(--header-highlight); */
+  box-shadow: 1px 1px 5px 5px rgba(177, 174, 174, 0.20);
+}
+
+.BlogPost {
+  position: relative;
+  margin-top: min(5%, 100px);
+  padding: 20px;
+  z-index: 3;
+  border: 3px solid black;
+  background-color: var(--background-color);
+}
+
+.VideoContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
 }
