@@ -10,10 +10,10 @@ import './App.css';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basemname={`/${process.env.PUBLIC_URL}`}>
       <Routes>
-        <Route path="/"         element={<Layout />}>
-          <Route index          element={<Home />} />
+        <Route path="" element={<Layout />}>
+          <Route index element={<Home />} />
           <Route path="blog"    element={<Blog />} />
           <Route path="contact" element={<Contact />} />
           <Route path="cip"     element={<Cip />} />
