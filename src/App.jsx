@@ -10,7 +10,7 @@ import './App.css';
 
 export default function App() {
   return (
-    <HashRouter basemname={`/${process.env.PUBLIC_URL}`}>
+    <HashRouter basename="/">
       <Routes>
         <Route path="" element={<Layout />}>
           <Route index element={<Home />} />
