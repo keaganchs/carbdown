@@ -1,5 +1,5 @@
 // import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
@@ -10,7 +10,7 @@ import './App.css';
 
 export default function App() {
   return (
-    <BrowserRouter basemname={`/${process.env.PUBLIC_URL}`}>
+    <HashRouter basemname={`/${process.env.PUBLIC_URL}`}>
       <Routes>
         <Route path="" element={<Layout />}>
           <Route index element={<Home />} />
@@ -20,7 +20,7 @@ export default function App() {
           <Route path="*"       element={<NotFound />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
