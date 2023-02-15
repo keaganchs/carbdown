@@ -114,6 +114,7 @@ h1, h2, h3, h4 {
 
 .FooterContainer {
   top: 200vh;
+  margin-bottom: 100px;
   position: relative;
   width: 80%;
   bottom: 0;
@@ -201,5 +202,27 @@ h1, h2, h3, h4 {
   position: relative;
   display: flex;
   justify-content: center;
+}
 
+.PersonCard {
+  width: 35%;
+  min-height: 300px;
+  height: fit-content;
+  border: 3px solid black;
+  padding: 20px;
+  background-color: var(--background-color);
+}
+
+.PersonCardPhoto {
+  max-width: 50%;
+}
+
+.Left {
+  margin-left: 5%;
+  text-align: left;
+}
+
+.Right {
+  margin-right: 5%;
+  text-align: right;
 }
