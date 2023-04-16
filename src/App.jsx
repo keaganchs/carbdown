@@ -1,12 +1,22 @@
 // import ReactDOM from "react-dom/client";
 import { HashRouter, Routes, Route } from "react-router-dom";
+
 import Layout from "./pages/Layout";
+
 import Home from "./pages/Home";
-import Blog from "./pages/Blog";
-import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound"; 
+
+import Contact from "./pages/Contact";
 import Cip from "./pages/CIP";
+
+import Projects from "./pages/Projects";
+import LabBlog from './pages/blogs/LabBlog';
+import OutreachBlog from './pages/blogs/OutreachBlog';
+import SensorBlog from './pages/blogs/SensorBlog';
+import TwinBlog from './pages/blogs/TwinBlog';
+
 import './App.css';
+
 
 export default function App() {
   return (
@@ -14,10 +24,15 @@ export default function App() {
       <Routes>
         <Route path="" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="blog"    element={<Blog />} />
+          <Route path="projects" element={<Projects />}>
+            <Route path="lab" element={<LabBlog />}/>
+            <Route path="outreach" element={<OutreachBlog />}/>
+            <Route path="sensor" element={<SensorBlog />}/>
+            <Route path="twin" element={<TwinBlog />}/>
+          </Route>
           <Route path="contact" element={<Contact />} />
-          <Route path="cip"     element={<Cip />} />
-          <Route path="*"       element={<NotFound />} />
+          <Route path="cip" element={<Cip />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </HashRouter>

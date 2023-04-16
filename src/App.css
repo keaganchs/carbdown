@@ -10,9 +10,8 @@ html {
   --header-highlight: var(--highlight-color);
   --main-text-color: black;
   --link-text-color: darkblue;
-  --background-image: "";
 
-  --background-gradient-dark: rgb(219, 221, 222);
+  --background-gradient-dark: rgb(244, 247, 250);
   --background-gradient-light: rgb(253, 253, 253);
 }
 
@@ -25,10 +24,17 @@ body {
   justify-content: center;
 }
 
-.Content {
+.MainContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   justify-content: center;
-  padding-left: 10%;
-  padding-right: 10%;
+  align-items: center;
+}
+
+.Content {
+  position: relative;
+  max-width: calc(50px + 60vw);
 }
 
 .CenterText {
@@ -64,7 +70,7 @@ h1, h2, h3, h4 {
   top: 0;
   left: 50%;
 
-  width: 60%;
+  width: calc(100px + 60vw);
   min-height: 250vh;
   height: 100%;
 
@@ -75,7 +81,7 @@ h1, h2, h3, h4 {
 }
 
 .header nav {
-  position: relative;
+  position: sticky;
   border: 1px solid #f1f1f1;
   min-height: 50px;
   max-height: fit-content;
@@ -90,6 +96,18 @@ h1, h2, h3, h4 {
   gap: 4px;
   justify-content: center;
   background-color: var(--header-background);
+}
+
+.TopContainer {
+  height: fit-content;
+
+  padding: 30px;
+  text-align: center;
+  background-color: var(--background-color);
+  display: grid;
+  grid-auto-flow: column;
+  gap: 4px;
+  justify-content: left;
 }
 
 .header a {
@@ -114,12 +132,10 @@ h1, h2, h3, h4 {
 
 .FooterContainer {
   top: 200vh;
-  margin-bottom: 100px;
+  margin-bottom: 200px;
   position: relative;
   width: 80%;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .bg-image {
@@ -134,13 +150,6 @@ h1, h2, h3, h4 {
 
   animation-name: unBlurImage;
   animation-duration: 2s;
-}
-
-@keyframes unBlurImage {
-  from {background-image: var(--background-image);
-      filter: blur(8px);}
-  to {background-image: var(--background-image);
-  }
 }
 
 .left {
@@ -189,26 +198,55 @@ h1, h2, h3, h4 {
   box-shadow: 1px 1px 5px 5px rgba(177, 174, 174, 0.20);
 }
 
+.Grid {
+  display: flex;
+  width: 60vw;
+
+  justify-content: center;
+  align-content: flex-start;
+
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.Project {
+  width: 100%;
+  height: 100%;
+}
+
+.Project h3 {
+  text-align: center;
+}
+
 .BlogPost {
+  justify-self: center;
   position: relative;
   margin-top: min(5%, 100px);
   padding: 20px;
   z-index: 3;
-  border: 3px solid black;
+  border: 2px solid black;
   background-color: var(--background-color);
+  min-width: 300px;
+  max-width: 500px;
+  margin-left: 25px;
+  margin-right: 25px;
+  height: fit-content;
 }
 
 .VideoContainer {
+  margin-top: 30px;
   position: relative;
   display: flex;
   justify-content: center;
 }
 
 .PersonCard {
+  min-width: 300px;
   width: 35%;
   min-height: 300px;
   height: fit-content;
-  border: 3px solid black;
+  border: 2px solid black;
   padding: 20px;
   background-color: var(--background-color);
 }

@@ -7,10 +7,13 @@ const Layout = () => {
   return (
     <>
       <Navbar />
+
       <div className="BackgroundGradient"/>
-      <Outlet />
-      <Footer />
-      
+
+      <div className="MainContainer">
+        <Outlet />
+        <Footer />
+      </div>
     </>
   );
 };
